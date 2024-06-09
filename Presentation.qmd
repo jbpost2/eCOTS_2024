@@ -1,0 +1,401 @@
+---
+title: "Teaching Reproducible Workflows Using Digital Notebooks"
+subtitle: "Reproducible workflows are important! Tools like GitHub, Quarto, and Google Colab make reproducibility easy-ish."
+format: revealjs
+---
+
+## Welcome!
+
+**Goals:**
+
+- Describe reproducible workflows
+
+- Implement a reproducible workflow with Git/GitHub and Quarto
+
+Ideally, use RStudio with git installed on the computer. Completely web-based alternatives discussed!
+
+Image or something interesting
+
+## A Bit About Me
+
+- Teaching Professor in Department of Statistics at NC State (old picture of me when I was young)
+
+- Love mixing computing and statistics 
+
+- Improving efficiency
+
+- Two kids!
+
+## Cooking
+
+Louisa loves to 'cook'
+
+Images of her food
+cinnamon potatoes, cookies, salad, slop
+
+## Delicious Meal!
+
+Image of delicious looking meal
+
+Best ... ever! How did she do that? Oh no! Lack of reproducibility!
+
+## Git/GitHub
+
+If she'd just used Git/GitHub to track her recipes, we wouldn't be in this mess!
+
+- Git gives us a way to keep all versions of her recipes without resorting to:
+
+food_type.txt, food_type2.txt, food_typefinal.txt, foodtypefinal2.txt, foodtypeforrealfinal.txt, foodtypeforrealfinal2.txt
+
+## Different Cuisines
+
+She keeps getting her Chinese food recipes mixed up with her Italian recipes!
+
+
+## R Projects 
+
+If only she'd use R projects!
+
+- Give us a way to easily group a set of files, a working directory, and more
+
+- Easy to switch between
+
+## Including Thoughts/Comments
+
+She has trouble remembering her thoughts when trying new recipes.
+
+
+## Quarto
+
+If only she'd use Quarto notebooks (or Jupyter Notebooks)!
+
+- Give us a way to include thoughts and comments with nice formatting
+
+
+## Sharing Recipes
+
+She has trouble sharing her recipes with her friends
+
+
+## Communicating
+
+If only she'd use Quarto with GitHub!
+
+- Easy way to collaborate and share information (even create webpages)
+
+
+## Data Science Workflow
+
+Usually 
+
+- Read in raw data and manipulate it
+- Combine data sources
+- Summarize data to glean insights
+- Apply common analysis methods
+- Communicate Effectively
+
+> Want this process to be reproducible, collaborative, and easily shared!
+
+
+## Git & GitHub
+
+- **Git** is a version control software  
+  
+- **Github** is an online hosting service for Git-based projects
+
+    + Very useful for collaborating and sharing work!
+
+
+## Git Tracking
+
+- You associate git with a folder (repo)
+
+- Git keeps track of all files in the folder (repo)
+
+- If you want to keep changes you've made, you **commit** and **push** the changes to the folder (repo)
+
+
+## Github
+
+- Github allows you to have a remote file repository (folder) tracked by git
+
+
+## Github
+
+- Github allows you to have a remote file repository (folder) tracked by git
+
+**Fatherly Advice!**
+
+- Create a repo on GitHub (a remote git tracked folder)
+
+- Place your recipe in there
+
+- Each time you try a new version of the recipe, commit the changes to the file
+
+> - Let's do it!
+
+
+## Local vs Remote Work
+
+Mostly you'll want to work on your local computer.  
+
+- Install `git` on your computer!
+
+- (For R users) Connect RStudio with `git`
+
+- Can just use the web interface or github desktop
+
+
+## Workflow
+
+After creating repo on github:
+
+1. (Initially) **clone** the repo locally.  (Later) **pull** to get most recent versions of files
+
+2. Work and make changes
+
+3. **add** and **commit** to changes you like
+
+4. **push** changes to remote repo (on github)
+
+Let's clone our repo and work on it locally!
+
+
+## For R Users
+
+Separating Projects...
+
+When considering our data science workflow, we want to have a seamless way to
+
+-   work on our project
+-   utilize version control
+-   use local file paths for ease of sharing code
+-   collaborate with others
+
+All of this can be accomplished using R projects with git and github!
+
+## R Projects
+
+R projects provide a straightforward way to divide your work into multiple contexts. Each with their own:
+
+-   Working directory
+-   Workspace (environment with stored data/objects)
+-   History
+-   Folder structure & source documents
+
+> - Can be used outside of git/github
+
+
+## Cloning a Repo with RStudio
+
+(For R users) We don't want to use github.com web interface as that is inefficient.
+
+-   Better to clone the repo via the URL and use RStudio! Open RStudio,
+
+    -   go to File --> new project
+    -   select from version control
+    -   choose Git
+    -   paste in the repo link
+    -   select a directory to save this repo in
+    -   hit create project!
+
+-   Now have the files locally and this associates an R project with a git repo!
+
+## connecting Github and RStudio
+
+- If you can connect RStudio to your github account, life simplifies!
+
+- Can be annoying but [instructions are available!](https://happygitwithr.com/connect-intro)
+
+
+## Documenting Thoughts
+
+We also need to make sure that we document our thoughts and process as we work through cleaning our data, summarizing it, and fitting our models.
+
+-   Quarto: Next generation version of R Markdown!
+
+    -   Built to use multiple programming languages (R, python, and Julia) easily
+    -   Works with Jupyter Notebook format as well
+    -   Created via a `.qmd` (quarto markdown file)
+    -   Renders most .Rmd files as is!
+
+## Documenting with Markdown via quarto
+
+Designed to be used in three ways ([R for Data Science](https://r4ds.hadley.nz/quarto))
+
+-   Communicating to decision makers (focus on conclusions not code)
+
+-   Collaborating with other data scientists (including future you!)
+
+-   As environment to do data science (documents what you did and what you were thinking)
+
+It is easy to create many types of documents in quarto! Go to file --\> New File --\> Quarto Document
+
+```{r, echo = FALSE, fig.align='center', out.width = '600px'}
+knitr::include_graphics("img/quarto_outputs.png")
+```
+
+
+## Elements of a Quarto Document
+
+- YAML header
+
+- Markdown text
+
+- Code chunks
+
+
+## YAML Header
+
+YAML ("Yet Another Markup Language" or "YAML ain't markup language")
+
+- Defines settings for the creation process
+
+```         
+---
+title: "Untitled"
+format: html
+editor: visual
+---
+```
+
+
+## Markdown Syntax
+
+Quarto uses a Markdown language
+
+- HTML is the most commonly known markup language 
+
+`<h1>My first level header</h1>`\
+`<a href = "https://www.google.com">Link to a search engine.</a>`
+
+
+- Markdown is a simpler version of this
+
+`# My first level header`\
+`[Link to a search engine](https://www.google.com)`
+
+## Code Chunks
+
+Where R markdown and quarto go beyond is in the ability to weave R code into the equation!
+
+-   You can include **code chunks** in your markdown.
+-   You then render the markdown through RStudio (or the command line).
+-   The R code runs and output is included in the final document!
+-   It is very awesome.
+
+
+## Code Chunks
+
+-   Start a code chunk by typing out the syntax or with CTRL/CMD + Alt/Option + I
+
+-   When rendering:
+
+    -   Chunks run sequentially in the document
+    -   Chunks share objects. Essentially an R environment is created when rendering a document and all objects created in chunks are stored in it.
+    -   Can specify behavior of each code chunk (show R code or hide it, evaluate or don't evaluate) and set global chunk behavior
+
+## Code Chunk Options
+
+To change the behavior of code chunks, we use chunk options:
+
+-   Hide/show code with `echo = FALSE/TRUE`\
+-   Choose if code is evaluated with `eval = TRUE/FALSE`\
+-   Have code evaluate, not show, and show no output with `include = TRUE/FALSE`
+-   Turn on/off displaying of messages or warnings with `message = TRUE/FALSE` and `warning = TRUE/FALSE`
+
+## Code Chunk Options
+
+- Specified via 
+
+```{r, out.width = "500px",echo=FALSE, fig.align='center'}
+knitr::include_graphics("img/chunk.png")
+```
+
+or 
+
+```{r, out.width = "500px",echo=FALSE, fig.align='center'}
+knitr::include_graphics("img/local_chunk_options_quarto.png")
+```
+
+
+## Global Chunk Options
+
+With quarto, if you want to specify global chunk options the best way to do so is in the YAML header. **Be very careful about spacing in YAML headers!**
+
+Here is an example that would make all code chunks be 'collapsed' by default.
+
+```         
+---
+title: "My Document"
+format: html
+knitr:
+  opts_chunk: 
+    collapse: true
+---
+```
+
+## Resources
+
+We'll go through the basics to get you started. Much more is available on the [quarto docs page](https://quarto.org/docs/get-started/hello/rstudio.html), the [RStudio quarto integration page](https://docs.posit.co/ide/user/ide/guide/documents/quarto-project.html), and in the [R for Data Science book](https://r4ds.hadley.nz/quarto).
+
+-   `[Cheat Sheet link](https://rstudio.github.io/cheatsheets/quarto.pdf)` $\rightarrow$ [Cheat Sheet link](https://rstudio.github.io/cheatsheets/quarto.pdf)
+
+Check [this site for markdown basics](https://quarto.org/docs/authoring/markdown-basics.html). (Headers can be used to easily create a table of contents (and is useful for accessibility of documents).)
+
+
+## Sharing Work
+
+By using quarto with git/github we get a reproducible workflow where we can easily share the results!
+
+
+## Can Create a Website
+
+- Clone this repo and then we can easily create a website
+
+- Just need to use `quarto render` in the terminal 
+
+- Push all changes up!
+
+Share instruction document on that process
+
+
+## Collaboration Idea
+
+GitHub allows for easy collaboration 
+
+- Everyone can work on the same `branch` and just take turns working
+
+```{r, echo = FALSE, fig.align='center', out.width = "500px"}
+knitr::include_graphics("img/git_diagram.png")
+```
+
+
+
+## Working on Branches
+
+- Alternatively, you can have separate **branches** of the repo
+
+```{r, echo = FALSE, fig.align='center', out.width = "500px"}
+knitr::include_graphics("img/git_branch_diagram.png")
+```
+
+- Work on a branch is similar to working on the main branch
+
+- Can merge when happy!
+
+
+## Recap
+
+- **Git** is a version control software  
+
+    + Associated with a folder (repo)
+    + Tracks changes to files
+
+- **Github** is an online hosting service for Git-based projects
+
+- Quarto allows you to document your thought process and code
+
+- Combining github and quarto allows you to communicate and collaborate easily!
+
+    
