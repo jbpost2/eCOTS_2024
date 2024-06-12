@@ -1,0 +1,93 @@
+---
+title: "Creating a Web Page with Quarto"
+format: html
+---
+
+We're going to follow the process outlined for 'render to docs' [from here](https://quarto.org/docs/publishing/github-pages.html).
+
+# Step 1
+
+- Head to github and create a new repo. 
+
+    + Be sure to make the repo public and **do not** choose a `.gitignore`
+    
+```{r, echo = FALSE, out.width = '250px'}
+knitr::include_graphics("img/create_repo.png")
+```
+
+# Step 2
+
+- Create a new R project from version control that clones this repository locally.
+
+    + Recall you can click on the green button on the github.com repo website to copy the repo link. 
+    + A `.gitignore` file may be created in this process. That isn't a worry!
+    
+# Step 3
+
+- Create a new `.qmd` document that outputs to HTML. You can give this whatever title you'd like. Save the file in the main repo folder.
+
+    
+# Step 4
+    
+In your repo folder (locally), create a file called `_quarto.yml`. Open this file (perhaps in RStudio or a text editor) and place the following in the file (spacing is important!):
+
+```
+project:
+  type: website
+  output-dir: docs
+```
+
+To create the file, you can just navigate to the folder and create a new file. 
+
+- On windows, first make sure that file extensions show when you look at files in folders.
+
+    ```{r, echo = FALSE, out.width = '250px'}
+knitr::include_graphics("img/show_file_extension.png")
+    ```
+
+    + Now right click in the folder area, select 'New' --> 'Text Document'. Change the file name and file extension (the `.txt` part) to `_quarto.yml`. Now you can open the file in RStudio or a text editor and add the text.
+
+- On a mac, you should be able to create a file using TextEdit in your R project folder. Save it as a `.doc` or whatever. Then you should be able to rename the file as `_quarto.yml`. Now you can open the file in RStudio or a text editor and add the text.
+
+# Step 5
+
+Now create a file called `.nojekyll` in your project repo. This file doesn't need to have anything in it! You just need that file there (it may be a hidden file after you create it. Github should still track it.)
+
+
+# Step 6
+
+Open the terminal in RStudio (next to the Console) and run the following code:
+
+`quarto render`
+
+```{r, echo = FALSE, out.width = '300px'}
+knitr::include_graphics("img/quarto_render.png")
+```
+
+# Step 7
+
+Push all changes up to your repo! You can do this via menus or the command line (or via the github web interface).
+
+# Step 8
+
+Head to your github repo page. Go to settings, choose pages, and under "Branch" choose 'main' and change the folder to /docs. Then hit save!
+
+```{r, echo = FALSE, out.width = '300px'}
+knitr::include_graphics("img/pages_setup.png")
+```
+
+# Step 9
+
+Wait about 2 minutes... Head back to your main github repo page. You'll now see a 'Deployments' section on the bottom right.
+
+```{r, echo = FALSE, out.width = '300px'}
+knitr::include_graphics("img/deployments.png")
+```
+
+Click on that. Hopefully, after a minute you see a green check and something that says your site is ready!
+
+```{r, echo = FALSE, out.width = '300px'}
+knitr::include_graphics("img/see_page.png")
+```
+
+Click on that and you should see a nicely rendered website! 
