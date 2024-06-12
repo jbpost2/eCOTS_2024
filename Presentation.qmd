@@ -344,6 +344,8 @@ Reproducibility means:
 
 - `justin_post@ncsu.edu`
 
+- <https://go.ncsu.edu/reproducibility>
+
 - Special thanks to Louisa
 
 ```{r, echo = FALSE, fig.align='center', out.width = "500px"}
