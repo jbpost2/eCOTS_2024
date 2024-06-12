@@ -136,5 +136,5 @@ knitr::include_graphics("img/resolve2.png")
     + Push the changes to the remote repo (`git push`)
 
 
-Check out information for [using RStudio with GitHub](RStudio_GitHub.qmd) or [using Google Colab with Github](Colab_GitHub.qmd)!
+Check out information for [using RStudio with GitHub](RStudio_GitHub.qmd) or [using Google Colab with Github](https://colab.research.google.com/github/jbpost2/eCOTS_2024/blob/main/Using_Google_Colab_with_GitHub.ipynb)!
 
