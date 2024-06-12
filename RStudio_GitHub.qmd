@@ -245,4 +245,5 @@ Please pop this video out and watch it in the full panopto player!
 <iframe src="https://ncsu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=5fb1955e-a720-4739-a404-b170018a55ee&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="05 - Watch - R Projects &amp; Connecting with GitHub" ></iframe>
 ```
 
-[Check here for information about creating a web site with quarto and GitHub.](Creating_Web_Site.qmd)
+- [Information about using Markdown and Quarto.](quarto_Markdown.qmd)
+- [Check here for information about creating a web site with quarto and GitHub.](Creating_Web_Site.qmd)

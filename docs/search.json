@@ -18,77 +18,7 @@
     "href": "RStudio_GitHub.html#connecting-gitgithub-with-rstudio",
     "title": "RStudio & GitHub",
     "section": "Connecting Git/GitHub with RStudio",
-    "text": "Connecting Git/GitHub with RStudio\nIdeally we want to document our process, easily collaborate, and widely share our work\n\nFor reproducibility, ideally we would save different versions of our analysis, write-up, etc. along the way\nRemember that git is a version control software to help:\n\nTrack the changes we commit to the files\nAllow multiple users to work on the same project\n\ngithub is a hosting service that allows us to do Git-based projects on the internet and share them widely!\n\nRecall our basic workflow. First we create a repo on github (remotely). We then associate a folder on our local computer with that repo using git. Then we:\n\nPull down most recent files (git pull) or do initial download (git clone)\nAdd files you want to keep changes to (git add)\nCommit to the changes (git commit)\nPush the changes to the remote repo (git push)\n\nLet’s go through some explicit steps to do this! Make sure you’ve downloaded git to your machine already (see earlier material on git/github)!\n\nCloning a Repo & Working in RStudio\nWe don’t want to use github.com web interface as that is inefficient.\n\nWe can clone the repo (i.e. download the entire repo locally).\nRepo main page has a green button. Click on that.\n\nCan download a zip and unzip it to an appropriate folder\n\n\n\n\n\n\n\n\nBetter to clone the repo via the URL and use RStudio! Open RStudio,\n\ngo to File –&gt; new project\nselect from version control\nchoose Git\npaste in the repo link\nselect a directory to save this repo in\nhit create project!\n\nNow have the files locally and this associates an R project with a git repo!\nTry it with my repo here: https://github.com/jbpost2/ZScores.git\n\nYou won’t have access to push files to this repository though!\n\n\nTry this out on your own! Create your own repo on github. Then try to download it as an R project.\n\n\nCommunication Between Github and RStudio\nWe need to make sure RStudio and github can communicate. This can sometimes be tough to get working! Do the following:\n\nModify a file in the github repo you just created and downloaded (the one you own).\nGo to the Git tab in your Environment area\nYou should see any files with changes\nCan add files that you’d like to commit up to the remote repo\nClick on all of the boxes (equivalent to git add -A when using the command line) and click the Commit button\nA window pops up with a comparison of files. When satisfied, write a commit message in the box and click the commit button (equivalent to git commit -m \"message\" when using the command line)\nHit close on that window\nClick the push button in the top right (equivalent to git push when using the command line)\nYou may be prompted to log-in in some way. If not, repo on gitub.com should show the changes!\n\n\n\nUsing the Command Line Interface (CLI)\nWhen working by myself on a repo, I’m not worried about merge conflicts with other people’s changes. As such, my workflow is as follows:\n\nOpen the appropriate project in RStudio\nGo to the Terminal and type git pull\nWork… at a good spot for saving, back to the terminal\nType git add -A to add all files that have been modified\nType git commit -m \"Message\" to stage a commit\nType git push to push the local changes to the remote repo\n\n\n\nCreating a Repo From an Existing R Project\nSometimes you’ll have an R project that already exists but you don’t have a corresponding repo on GitHub. The easiest way to get that project into a repo is to do the following:\n\nCreate a new repository on GitHub\nClone it to your computer via RStudio new project (in a different folder than your current project)\nMove all the files from the R Project you already have into the new project folder\nadd, commit, and push up the files\n\nPlease pop this video out and watch it in the full panopto player!\n\nCheck here for information about creating a web site with quarto and GitHub."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Reproducibility with Github & RStudio or Google Colab",
-    "section": "",
-    "text": "The page here and those linked are supplemental material for those that might want to learn a bit more!\n\nThe main presentation is available here!\nThe GitHub site is available here\n\nThe following are supplemental resources that you might find useful:\n\nBasics of git and GitHub\nInformation for using RStudio with GitHub\nInformation for using Google Colab with Github\nInformation about creating a web site with quarto and GitHub."
-  },
-  {
-    "objectID": "example.html",
-    "href": "example.html",
-    "title": "",
-    "section": "",
-    "text": "4\n\n4"
-  },
-  {
-    "objectID": "Colab_GitHub.html",
-    "href": "Colab_GitHub.html",
-    "title": "Google Colab with Github",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
-  },
-  {
-    "objectID": "Colab_GitHub.html#quarto",
-    "href": "Colab_GitHub.html#quarto",
-    "title": "Google Colab with Github",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
-  },
-  {
-    "objectID": "Colab_GitHub.html#running-code",
-    "href": "Colab_GitHub.html#running-code",
-    "title": "Google Colab with Github",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
-  },
-  {
-    "objectID": "Creating_Web_Site.html",
-    "href": "Creating_Web_Site.html",
-    "title": "Creating a Web Page with Quarto",
-    "section": "",
-    "text": "We’re going to follow the process outlined for ‘render to docs’ from here.\n\nStep 1\n\nHead to github and create a new repo.\n\nBe sure to make the repo public and do not choose a .gitignore\n\n\n\n\n\n\n\n\n\nStep 2\n\nCreate a new R project from version control that clones this repository locally.\n\nRecall you can click on the green button on the github.com repo website to copy the repo link.\nA .gitignore file may be created in this process. That isn’t a worry!\n\n\n\n\nStep 3\n\nCreate a new .qmd document that outputs to HTML. You can give this whatever title you’d like. Save the file in the main repo folder.\n\n\n\nStep 4\nIn your repo folder (locally), create a file called _quarto.yml. Open this file (perhaps in RStudio or a text editor) and place the following in the file (spacing is important!):\nproject:\n  type: website\n  output-dir: docs\nTo create the file, you can just navigate to the folder and create a new file.\n\nOn windows, first make sure that file extensions show when you look at files in folders.\n::: {.cell} ::: {.cell-output-display}  ::: :::\n\nNow right click in the folder area, select ‘New’ –&gt; ‘Text Document’. Change the file name and file extension (the .txt part) to _quarto.yml. Now you can open the file in RStudio or a text editor and add the text.\n\nOn a mac, you should be able to create a file using TextEdit in your R project folder. Save it as a .doc or whatever. Then you should be able to rename the file as _quarto.yml. Now you can open the file in RStudio or a text editor and add the text.\n\n\n\nStep 5\nNow create a file called .nojekyll in your project repo. This file doesn’t need to have anything in it! You just need that file there (it may be a hidden file after you create it. Github should still track it.)\n\n\nStep 6\nOpen the terminal in RStudio (next to the Console) and run the following code:\nquarto render\n\n\n\n\n\n\n\nStep 7\nPush all changes up to your repo! You can do this via menus or the command line (or via the github web interface).\n\n\nStep 8\nHead to your github repo page. Go to settings, choose pages, and under “Branch” choose ‘main’ and change the folder to /docs. Then hit save!\n\n\n\n\n\n\n\nStep 9\nWait about 2 minutes… Head back to your main github repo page. You’ll now see a ‘Deployments’ section on the bottom right.\n\n\n\n\n\nClick on that. Hopefully, after a minute you see a green check and something that says your site is ready!\n\n\n\n\n\nClick on that and you should see a nicely rendered website!"
-  },
-  {
-    "objectID": "Git_GitHub.html",
-    "href": "Git_GitHub.html",
-    "title": "Git and GitHub",
-    "section": "",
-    "text": "Statistics & Data Science!\n\nRead in raw data and manipulate it\nCombine data sources\nSummarize data to glean insights\nApply common analysis methods\nCommunicate Effectively\n\nImportant considerations for our data analysis workflow:\n\nReproducibility: Recreate analysis completely\nVersion control: Avoid renaming of files or losing old work\nCollaboration: Work seamlessly with others"
-  },
-  {
-    "objectID": "Git_GitHub.html#forking",
-    "href": "Git_GitHub.html#forking",
-    "title": "Git and GitHub",
-    "section": "Forking",
-    "text": "Forking\n\nPeople often fork the repo\nThis creates a copy of the repo on your account\nYou can then work as normal\nIf you do a commit on your branch, you may notice something like this"
-  },
-  {
-    "objectID": "Git_GitHub.html#merging-branches",
-    "href": "Git_GitHub.html#merging-branches",
-    "title": "Git and GitHub",
-    "section": "Merging Branches",
-    "text": "Merging Branches\nSuppose you like your commit and you think the original owner will too!\n\nYou can do a pull request\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIf you are lucky, there won’t be any merge conflicts.\n\nAllows the owner of the original repo to accept the pull request without needing to modify things\nThe owner will get a notification that a pull request has been made\n\n\n\n\n\n\n\n\n\n\n\nOwner can then investigate the request and choose whether or not to accept it or they can ask for more details"
-  },
-  {
-    "objectID": "Git_GitHub.html#dealing-with-conflicts",
-    "href": "Git_GitHub.html#dealing-with-conflicts",
-    "title": "Git and GitHub",
-    "section": "Dealing with conflicts",
-    "text": "Dealing with conflicts\n\nSometimes changes requested conflict with changes already made\n\n\n\n\n\n\n\n\n\n\n\nOwner sees a notification about conflicts that must be resolved\n\n\n\n\n\n\n\n\n\n\n\nThey can view the issues and pick which to include or to include both with a modification\n\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; is a conflict marker\n\n\n\n\n\n\n\n\n\n\nFigure out what to do and delete the &lt;&lt;&lt; === &gt;&gt;&gt; lines"
+    "text": "Connecting Git/GitHub with RStudio\nIdeally we want to document our process, easily collaborate, and widely share our work\n\nFor reproducibility, ideally we would save different versions of our analysis, write-up, etc. along the way\nRemember that git is a version control software to help:\n\nTrack the changes we commit to the files\nAllow multiple users to work on the same project\n\ngithub is a hosting service that allows us to do Git-based projects on the internet and share them widely!\n\nRecall our basic workflow. First we create a repo on github (remotely). We then associate a folder on our local computer with that repo using git. Then we:\n\nPull down most recent files (git pull) or do initial download (git clone)\nAdd files you want to keep changes to (git add)\nCommit to the changes (git commit)\nPush the changes to the remote repo (git push)\n\nLet’s go through some explicit steps to do this! Make sure you’ve downloaded git to your machine already (see earlier material on git/github)!\n\nCloning a Repo & Working in RStudio\nWe don’t want to use github.com web interface as that is inefficient.\n\nWe can clone the repo (i.e. download the entire repo locally).\nRepo main page has a green button. Click on that.\n\nCan download a zip and unzip it to an appropriate folder\n\n\n\n\n\n\n\n\nBetter to clone the repo via the URL and use RStudio! Open RStudio,\n\ngo to File –&gt; new project\nselect from version control\nchoose Git\npaste in the repo link\nselect a directory to save this repo in\nhit create project!\n\nNow have the files locally and this associates an R project with a git repo!\nTry it with my repo here: https://github.com/jbpost2/ZScores.git\n\nYou won’t have access to push files to this repository though!\n\n\nTry this out on your own! Create your own repo on github. Then try to download it as an R project.\n\n\nCommunication Between Github and RStudio\nWe need to make sure RStudio and github can communicate. This can sometimes be tough to get working! Do the following:\n\nModify a file in the github repo you just created and downloaded (the one you own).\nGo to the Git tab in your Environment area\nYou should see any files with changes\nCan add files that you’d like to commit up to the remote repo\nClick on all of the boxes (equivalent to git add -A when using the command line) and click the Commit button\nA window pops up with a comparison of files. When satisfied, write a commit message in the box and click the commit button (equivalent to git commit -m \"message\" when using the command line)\nHit close on that window\nClick the push button in the top right (equivalent to git push when using the command line)\nYou may be prompted to log-in in some way. If not, repo on gitub.com should show the changes!\n\n\n\nUsing the Command Line Interface (CLI)\nWhen working by myself on a repo, I’m not worried about merge conflicts with other people’s changes. As such, my workflow is as follows:\n\nOpen the appropriate project in RStudio\nGo to the Terminal and type git pull\nWork… at a good spot for saving, back to the terminal\nType git add -A to add all files that have been modified\nType git commit -m \"Message\" to stage a commit\nType git push to push the local changes to the remote repo\n\n\n\nCreating a Repo From an Existing R Project\nSometimes you’ll have an R project that already exists but you don’t have a corresponding repo on GitHub. The easiest way to get that project into a repo is to do the following:\n\nCreate a new repository on GitHub\nClone it to your computer via RStudio new project (in a different folder than your current project)\nMove all the files from the R Project you already have into the new project folder\nadd, commit, and push up the files\n\nPlease pop this video out and watch it in the full panopto player!\n\n\nInformation about using Markdown and Quarto.\nCheck here for information about creating a web site with quarto and GitHub."
   },
   {
     "objectID": "Presentation.html#welcome",
@@ -299,5 +229,131 @@
     "title": "Teaching Reproducible Workflows Using Digital Notebooks",
     "section": "Questions/Contact",
     "text": "Questions/Contact\n\njustin_post@ncsu.edu\nhttps://go.ncsu.edu/reproducibility\nSpecial thanks to Louisa"
+  },
+  {
+    "objectID": "Git_GitHub.html",
+    "href": "Git_GitHub.html",
+    "title": "Git and GitHub",
+    "section": "",
+    "text": "Statistics & Data Science!\n\nRead in raw data and manipulate it\nCombine data sources\nSummarize data to glean insights\nApply common analysis methods\nCommunicate Effectively\n\nImportant considerations for our data analysis workflow:\n\nReproducibility: Recreate analysis completely\nVersion control: Avoid renaming of files or losing old work\nCollaboration: Work seamlessly with others"
+  },
+  {
+    "objectID": "Git_GitHub.html#forking",
+    "href": "Git_GitHub.html#forking",
+    "title": "Git and GitHub",
+    "section": "Forking",
+    "text": "Forking\n\nPeople often fork the repo\nThis creates a copy of the repo on your account\nYou can then work as normal\nIf you do a commit on your branch, you may notice something like this"
+  },
+  {
+    "objectID": "Git_GitHub.html#merging-branches",
+    "href": "Git_GitHub.html#merging-branches",
+    "title": "Git and GitHub",
+    "section": "Merging Branches",
+    "text": "Merging Branches\nSuppose you like your commit and you think the original owner will too!\n\nYou can do a pull request\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIf you are lucky, there won’t be any merge conflicts.\n\nAllows the owner of the original repo to accept the pull request without needing to modify things\nThe owner will get a notification that a pull request has been made\n\n\n\n\n\n\n\n\n\n\n\nOwner can then investigate the request and choose whether or not to accept it or they can ask for more details"
+  },
+  {
+    "objectID": "Git_GitHub.html#dealing-with-conflicts",
+    "href": "Git_GitHub.html#dealing-with-conflicts",
+    "title": "Git and GitHub",
+    "section": "Dealing with conflicts",
+    "text": "Dealing with conflicts\n\nSometimes changes requested conflict with changes already made\n\n\n\n\n\n\n\n\n\n\n\nOwner sees a notification about conflicts that must be resolved\n\n\n\n\n\n\n\n\n\n\n\nThey can view the issues and pick which to include or to include both with a modification\n\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; is a conflict marker\n\n\n\n\n\n\n\n\n\n\nFigure out what to do and delete the &lt;&lt;&lt; === &gt;&gt;&gt; lines"
+  },
+  {
+    "objectID": "Creating_Web_Site.html",
+    "href": "Creating_Web_Site.html",
+    "title": "Creating a Web Page with Quarto",
+    "section": "",
+    "text": "We’re going to follow the process outlined for ‘render to docs’ from here.\n\nStep 1\n\nHead to github and create a new repo.\n\nBe sure to make the repo public and do not choose a .gitignore\n\n\n\n\n\n\n\n\n\nStep 2\n\nCreate a new R project from version control that clones this repository locally.\n\nRecall you can click on the green button on the github.com repo website to copy the repo link.\nA .gitignore file may be created in this process. That isn’t a worry!\n\n\n\n\nStep 3\n\nCreate a new .qmd document that outputs to HTML. You can give this whatever title you’d like. Save the file in the main repo folder.\n\n\n\nStep 4\nIn your repo folder (locally), create a file called _quarto.yml. Open this file (perhaps in RStudio or a text editor) and place the following in the file (spacing is important!):\nproject:\n  type: website\n  output-dir: docs\nTo create the file, you can just navigate to the folder and create a new file.\n\nOn windows, first make sure that file extensions show when you look at files in folders.\n::: {.cell} ::: {.cell-output-display}  ::: :::\n\nNow right click in the folder area, select ‘New’ –&gt; ‘Text Document’. Change the file name and file extension (the .txt part) to _quarto.yml. Now you can open the file in RStudio or a text editor and add the text.\n\nOn a mac, you should be able to create a file using TextEdit in your R project folder. Save it as a .doc or whatever. Then you should be able to rename the file as _quarto.yml. Now you can open the file in RStudio or a text editor and add the text.\n\n\n\nStep 5\nNow create a file called .nojekyll in your project repo. This file doesn’t need to have anything in it! You just need that file there (it may be a hidden file after you create it. Github should still track it.)\n\n\nStep 6\nOpen the terminal in RStudio (next to the Console) and run the following code:\nquarto render\n\n\n\n\n\n\n\nStep 7\nPush all changes up to your repo! You can do this via menus or the command line (or via the github web interface).\n\n\nStep 8\nHead to your github repo page. Go to settings, choose pages, and under “Branch” choose ‘main’ and change the folder to /docs. Then hit save!\n\n\n\n\n\n\n\nStep 9\nWait about 2 minutes… Head back to your main github repo page. You’ll now see a ‘Deployments’ section on the bottom right.\n\n\n\n\n\nClick on that. Hopefully, after a minute you see a green check and something that says your site is ready!\n\n\n\n\n\nClick on that and you should see a nicely rendered website!"
+  },
+  {
+    "objectID": "Colab_GitHub.html",
+    "href": "Colab_GitHub.html",
+    "title": "Google Colab with Github",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "Colab_GitHub.html#quarto",
+    "href": "Colab_GitHub.html#quarto",
+    "title": "Google Colab with Github",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "Colab_GitHub.html#running-code",
+    "href": "Colab_GitHub.html#running-code",
+    "title": "Google Colab with Github",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "example.html",
+    "href": "example.html",
+    "title": "",
+    "section": "",
+    "text": "4\n\n4"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Reproducibility with Github & RStudio or Google Colab",
+    "section": "",
+    "text": "The page here and those linked are supplemental material for those that might want to learn a bit more!\n\nThe main presentation is available here!\nThe GitHub site is available here\n\nThe following are supplemental resources that you might find useful:\n\nBasics of git and GitHub\nInformation for using RStudio with GitHub\nInformation about using Markdown and Quarto.\nInformation about creating a web site with quarto and GitHub.\nInformation for using Google Colab with Github"
+  },
+  {
+    "objectID": "quarto_Markdown.html",
+    "href": "quarto_Markdown.html",
+    "title": "Quarto and Markdown",
+    "section": "",
+    "text": "We need to make sure that we document our thoughts and process as we work through cleaning our data, summarizing it, and fitting our models.\n\nQuarto: Next generation version of R Markdown!\n\nBuilt to use multiple programming languages (R, python, and Julia) easily\nWorks with Jupyter Notebook format as well\nCreated via a .qmd (quarto markdown file)\nRenders most .Rmd files as is!\n\n\nDesigned to be used in three ways (R for Data Science)\n\nCommunicating to decision makers (focus on conclusions not code)\nCollaborating with other data scientists (including future you!)\nAs environment to do data science (documents what you did and what you were thinking)\n\nIt is easy to create many types of documents in quarto! Go to file –&gt; New File –&gt; Quarto Document"
+  },
+  {
+    "objectID": "quarto_Markdown.html#yaml-header",
+    "href": "quarto_Markdown.html#yaml-header",
+    "title": "Quarto and Markdown",
+    "section": "YAML Header",
+    "text": "YAML Header\nYAML (“Yet Another Markup Language” or “YAML ain’t markup language”)\n\nDefines settings for the creation process\n\n---\ntitle: \"Untitled\"\nformat: html\neditor: visual\n---"
+  },
+  {
+    "objectID": "quarto_Markdown.html#markdown-syntax",
+    "href": "quarto_Markdown.html#markdown-syntax",
+    "title": "Quarto and Markdown",
+    "section": "Markdown Syntax",
+    "text": "Markdown Syntax\nQuarto uses a Markdown language\n\nHTML is the most commonly known markup language\n\n&lt;h1&gt;My first level header&lt;/h1&gt;\n&lt;a href = \"https://www.google.com\"&gt;Link to a search engine.&lt;/a&gt;\n\nMarkdown is a simpler version of this\n\n# My first level header\n[Link to a search engine](https://www.google.com)"
+  },
+  {
+    "objectID": "quarto_Markdown.html#code-chunks",
+    "href": "quarto_Markdown.html#code-chunks",
+    "title": "Quarto and Markdown",
+    "section": "Code Chunks",
+    "text": "Code Chunks\nWhere R markdown and quarto go beyond is in the ability to weave R code into the equation!\n\nYou can include code chunks in your markdown.\nYou then render the markdown through RStudio (or the command line).\nThe R code runs and output is included in the final document!\nIt is very awesome.\n\nStart a code chunk by typing out the syntax or with CTRL/CMD + Alt/Option + I\n\nWhen rendering:\n\nChunks run sequentially in the document\nChunks share objects. Essentially an R environment is created when rendering a document and all objects created in chunks are stored in it.\nCan specify behavior of each code chunk (show R code or hide it, evaluate or don’t evaluate) and set global chunk behavior"
+  },
+  {
+    "objectID": "quarto_Markdown.html#code-chunk-options",
+    "href": "quarto_Markdown.html#code-chunk-options",
+    "title": "Quarto and Markdown",
+    "section": "Code Chunk Options",
+    "text": "Code Chunk Options\nTo change the behavior of code chunks, we use chunk options:\n\nHide/show code with echo = FALSE/TRUE\n\nChoose if code is evaluated with eval = TRUE/FALSE\n\nHave code evaluate, not show, and show no output with include = TRUE/FALSE\nTurn on/off displaying of messages or warnings with message = TRUE/FALSE and warning = TRUE/FALSE\n\nThese code chunks are specified via\n\n\n\n\n\n\n\n\n\nor\n\n\n\n\n\n\n\n\n\nWith quarto, if you want to specify global chunk options the best way to do so is in the YAML header. Be very careful about spacing in YAML headers!\nHere is an example that would make all code chunks be ‘collapsed’ by default.\n---\ntitle: \"My Document\"\nformat: html\nknitr:\n  opts_chunk: \n    collapse: true\n---"
+  },
+  {
+    "objectID": "quarto_Markdown.html#resources",
+    "href": "quarto_Markdown.html#resources",
+    "title": "Quarto and Markdown",
+    "section": "Resources",
+    "text": "Resources\nMuch more is available on the quarto docs page, the RStudio quarto integration page, and in the R for Data Science book.\n\n[Cheat Sheet link](https://rstudio.github.io/cheatsheets/quarto.pdf) \\(\\rightarrow\\) Cheat Sheet link\n\nCheck this site for markdown basics. (Headers can be used to easily create a table of contents (and is useful for accessibility of documents).)"
+  },
+  {
+    "objectID": "quarto_Markdown.html#sharing-work",
+    "href": "quarto_Markdown.html#sharing-work",
+    "title": "Quarto and Markdown",
+    "section": "Sharing Work",
+    "text": "Sharing Work\nBy using quarto with git/github we get a reproducible workflow where we can easily share the results!"
+  },
+  {
+    "objectID": "quarto_Markdown.html#recap",
+    "href": "quarto_Markdown.html#recap",
+    "title": "Quarto and Markdown",
+    "section": "Recap",
+    "text": "Recap\n\nGit is a version control software\n\nAssociated with a folder (repo)\nTracks changes to files\n\nGithub is an online hosting service for Git-based projects\nQuarto allows you to document your thought process and code\nCombining github and quarto allows you to communicate and collaborate easily!\n\nCheck here for information about creating a web site with quarto and GitHub."
   }
 ]

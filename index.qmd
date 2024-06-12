@@ -12,5 +12,6 @@ The following are supplemental resources that you might find useful:
 
 - [Basics of git and GitHub](Git_GitHub.qmd)
 - Information for [using RStudio with GitHub](RStudio_GitHub.qmd)
-- Information for [using Google Colab with Github](Colab_GitHub.qmd)
+- Information about [using Markdown and Quarto.](quarto_Markdown.qmd)
 - Information about [creating a web site with quarto and GitHub.](Creating_Web_Site.qmd)
+- Information for [using Google Colab with Github](Colab_GitHub.qmd)
